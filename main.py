@@ -17,4 +17,11 @@ def port_scan(port):
         return False
 
 
-print(port_scan(80))
+# Range of the Standarized ports
+for port in range(1, 1024):
+    result = port_scan(port)
+    # Print open/closed ports
+    if result:
+        print(f'Port {port} is open!')
+    else:
+        print(f'Port {port} is closed!')
